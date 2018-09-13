@@ -12,6 +12,7 @@ namespace RecaptchaAction.Attributes
 {
     public class ReCaptchaAttribute : ActionFilterAttribute
     {
+        private readonly string _secret = "6LeleW8UAAAAAD7gvOgRCLHOUmbebvpHGn4TpAey";
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             var httpContext = context.HttpContext;
@@ -21,19 +22,14 @@ namespace RecaptchaAction.Attributes
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(@"https://www.google.com/recaptcha/api/siteverify");
-                var response = client.GetStringAsync($"?response={recaptchaResponse}&secret=6LeleW8UAAAAAD7gvOgRCLHOUmbebvpHGn4TpAey&action={recaptchaAction}").Result;
+                var response = client.GetStringAsync($"?response={recaptchaResponse}&secret{_secret}=&action={recaptchaAction}").Result;
                 var result = JsonConvert.DeserializeObject<RecaptchaResponse>(response);
                 if (result.Success == false || result.Score < float.Parse("0,1"))
                 {
                     ((Controller)context.Controller).ModelState.AddModelError("ReCaptcha", "Error");
-                    context.Result = ((Controller)context.Controller).BadRequest("Recapthca");
+                    context.Result = ((Controller)context.Controller).BadRequest("ReCaptcha");
                 }
             }
-
-
-            var test = httpContext.Request.Headers;
-            var hej = context.HttpContext.Request.Body;
-            base.OnActionExecuting(context);
         }
 
 
