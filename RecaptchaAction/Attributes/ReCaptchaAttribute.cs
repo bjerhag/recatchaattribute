@@ -14,7 +14,6 @@ namespace RecaptchaAction.Attributes
     {
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            Configuration
             var httpContext = context.HttpContext;
             var recaptchaResponse = httpContext.Request.Form["recaptcha_response"];
             var recaptchaAction = httpContext.Request.Form["recaptcha_action"];
