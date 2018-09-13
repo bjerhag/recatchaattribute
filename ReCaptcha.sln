@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReCaptcha", "ReCaptcha\ReCaptcha.csproj", "{30B23521-0203-4BB9-9E3B-6BED105B331C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecaptchaAction", "RecaptchaAction\RecaptchaAction.csproj", "{7FB3760F-FFA4-45D2-B9B9-92025B4C084C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30B23521-0203-4BB9-9E3B-6BED105B331C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B23521-0203-4BB9-9E3B-6BED105B331C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B23521-0203-4BB9-9E3B-6BED105B331C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B23521-0203-4BB9-9E3B-6BED105B331C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB3760F-FFA4-45D2-B9B9-92025B4C084C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB3760F-FFA4-45D2-B9B9-92025B4C084C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB3760F-FFA4-45D2-B9B9-92025B4C084C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB3760F-FFA4-45D2-B9B9-92025B4C084C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F9E8A0C-59E3-4296-8A3E-CA13AD54E092}
+	EndGlobalSection
+EndGlobal
