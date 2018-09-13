@@ -12,7 +12,7 @@ namespace RecaptchaAction.Attributes
 {
     public class ReCaptchaAttribute : ActionFilterAttribute
     {
-        private readonly string _secret = "6LeleW8UAAAAAD7gvOgRCLHOUmbebvpHGn4TpAey";
+        private readonly string _secret = "6LeleW8UAAAAAD7gvOgRCLHOUmbebvpHGn4TpAey"; 
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             var httpContext = context.HttpContext;
