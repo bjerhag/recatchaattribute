@@ -16,6 +16,7 @@ namespace RecaptchaAction.Attributes
             try
             {
                 var secret = Config.GetSection("Recaptcha:Secret").Value;
+                var scoreLimit = float.Parse(Config.GetSection("Recaptcha:ScoreLimit")?.Value ?? "0");
                 if (string.IsNullOrEmpty(secret))
                 {
                     Console.WriteLine("No recaptcha secret");
@@ -28,8 +29,10 @@ namespace RecaptchaAction.Attributes
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(@"https://www.google.com/recaptcha/api/siteverify");
+
                     var response = client.GetStringAsync($"?response={recaptchaResponse}&secret{secret}=&action={recaptchaAction}").Result;
                     var result = JsonConvert.DeserializeObject<RecaptchaResponse>(response);
+
                     if (result.Success == false || result.Score < float.Parse("0,1"))
                     {
                         ((Controller)context.Controller).ModelState.AddModelError("ReCaptcha", "Error");
